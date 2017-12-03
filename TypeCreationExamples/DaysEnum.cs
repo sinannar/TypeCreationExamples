@@ -9,16 +9,23 @@ namespace TypeCreationExamples
 
 namespace TypeCreationSecondWayExamples
 {
+    /*
+         Flag Attribute let us set multiple combination of values as an example
+    */
     [Flags]
     enum Days
     {
         None = 0x0,
-        Sun = 0x1,
-        Mon = 0x2,
-        Tue = 0x4,
-        Wed = 0x8,
-        Thu = 0x10,
-        Fri = 0x20,
-        Sat = 0x40,
-    } 
+        Sunday = 0x1,
+        Monday = 0x2,
+        Tuesday = 0x4,
+        Wednesday = 0x8,
+        Thursday = 0x10,
+        Friday = 0x20,
+        Saturday = 0x40,
+    }
+    class FlagAttributeExample
+    {
+        Days readingDays = Days.Monday | Days.Saturday;
+    }
 }
